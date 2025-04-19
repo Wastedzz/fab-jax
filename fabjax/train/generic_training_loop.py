@@ -103,7 +103,7 @@ def train(config: TrainConfig):
 
         else:
             for batch_idx in range(leading_info_shape[0]):
-                batch_info = jax.tree_map(lambda x: x[batch_idx], info)
+                batch_info = jax.tree.map(lambda x: x[batch_idx], info)
                 batch_info.update(iteration=iteration)
                 config.logger.write(batch_info)
 
@@ -122,7 +122,7 @@ def train(config: TrainConfig):
             )
             with open(checkpoint_path, "wb") as f:
                 if len(jax.devices()) > 1:
-                    state_first = jax.tree_map(lambda x: x[0], state)
+                    state_first = jax.tree.map(lambda x: x[0], state)
                     pickle.dump(state_first, f)
                 else:
                     pickle.dump(state, f)
