@@ -1,5 +1,5 @@
 chex
-blackjax
+blackjax==1.0.0
 distrax
 flax
 optax
