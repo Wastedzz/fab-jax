@@ -8,7 +8,9 @@ import blackjax.mcmc.metrics as metrics
 import blackjax.mcmc.proposal as proposal
 import blackjax.mcmc.trajectory as trajectory
 from blackjax.mcmc.trajectory import hmc_energy
-from blackjax.types import Array, PRNGKey, PyTree
+from blackjax.types import Array, PRNGKey
+from jax.tree_util import PyTreeDef as PyTree
+
 
 from blackjax.mcmc.integrators import EuclideanKineticEnergy
 
